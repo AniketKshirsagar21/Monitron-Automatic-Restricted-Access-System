@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+*{
+    font-family: 'Mulish', sans-serif;
+}
+
+.card-body{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+#card1 h1{
+    margin-bottom: 15px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.card-body form{
+    margin: 10px;
+}
+
+#submit-cancel{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width: 940px){
+    #submit-cancel{
+        flex-direction: row;
+    }
+}

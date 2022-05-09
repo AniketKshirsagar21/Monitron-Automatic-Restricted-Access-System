@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitron</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+</head>
+
+<body id="body-pd">
+
+
+
+
+  <header class="header" id="header">
+    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    <div class="header_img"> <img src="logo.png" alt=""> </div>
+  </header>
+
+
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+      <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span
+            class="nav_logo-name">IIIT-A</span> </a>
+        <div class="nav_list">
+
+          <a href="/studentDashboard" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i>
+            <span class="nav_name">Dashboard</span> </a>
+
+
+          <a href="/updateInfo" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Update
+              Credentials</span> </a>
+
+
+          {{!-- <a href="/notifications" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span
+              class="nav_name">Notifications</span> </a> --}}
+        </div>
+      </div>
+
+
+      <form action="/logout" method="post" class="nav_link">
+        <button class="btn " style="   padding: 0px; background-color: #271e4b; border-color: #271e4b;">
+
+          <i style="color: #AFA5D9;" class='bx bx-log-out nav_icon'></i>
+        </button>
+        <span class="nav_name" style="color: #AFA5D9;"> SignOut</span>
+      </form>
+
+
+
+      {{!-- <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i>
+
+        <span class="nav_name">SignOut</span>
+      </a> --}}
+
+
+
+
+    </nav>
+
+
+
+  </div>
+
+  {{!-- {{>header}} --}}
+  <!-- main content -->
+  <div class="card" id="card1">
+    <h1>Dashboard</h1>
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body" id="card-body1">
+      <div class="card" id="in-box">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <div id="btn11">
+            <div class="imgs"> <img src="profile.png" alt=""> </div>
+            <h5 class="card-title fw-bold" style="color: green;">Name</h5>
+          </div>
+          <p class="card-text">{{fullname}}</p>
+
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+      <div class="card" id="in-box">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <div id="btn11">
+            <div class="imgs"> <img src="username.png" alt=""> </div>
+            <h5 class="card-title fw-bold" style="color: green;">User Name</h5>
+          </div>
+
+          <p class="card-text">{{person_id}} </p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+      <div class="card" id="in-box">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <div id="btn11">
+            <div class="imgs"> <img src="email.png" alt=""> </div>
+            <h5 class="card-title fw-bold" style="color: green;">Email</h5>
+          </div>
+
+          <p class="card-text">{{person_email}}</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+
+    </div>
+    <div class="card-body" id="card-body1">
+      <div class="card" id="in-box">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <div id="btn11">
+            <div class="imgs"> <img src="phone.png" alt=""> </div>
+            <h5 class="card-title fw-bold" style="color: green;">Contact Number</h5>
+          </div>
+
+          <p class="card-text">{{person_contact_number}}</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+      <div class="card" id="in-box">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <div id="btn11">
+            <div class="imgs"> <img src="time.png" alt=""> </div>
+            <h5 class="card-title fw-bold" style="color: green;">Role Assigned</h5>
+          </div>
+          <p class="card-text">{{flag}}</p>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="card-body" id="card-body1">
+      <div class="card" id="in-box">
+        <div class="card-body" id="entry-exit">
+          <div class="imgs"> <img src="enter.png" alt=""> </div>
+          <h5 class="card-title fw-bold" style="color: green;">Entry / Exit</h5>
+          <form action="/entering" method="post">
+            <button type="submit" class="btn btn-success" id="enter" style="background-color: #271e4b;">Enter</button>
+          </form>
+
+          <form action="/exiting" method="post">
+            <button type="submit" class="btn btn-danger" id="exit">Exit</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div class="card-body card-btn" id="card-body1">
+      <div class="card" id="in-box">
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+        <div class="card-body">
+          <h5 class="card-title fw-bold" style="color: green;">Status : {{status1}}</h5>
+          <div id="btn11">
+            <div class="imgs"> <img src="timer.png" alt=""> </div>
+
+
+
+
+            <h5 class="card-title fw-bold" style="color: green;">Session-Time</h5>
+          </div>
+
+          <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+          {{!-- <h2 class="timerDisplay" style="color: black;"> 00 : 00 : 00</h2> --}}
+          <table class="table" style="
+                                        background: black;
+                                        color: white;
+                                        border-color: black;
+                                    ">
+            <thead>
+              <tr>
+                <th colspan="4" class="text-center">Upcoming Contests</th>
+              </tr>
+            </thead>
+            <tbody>
+
+
+              {{#ifEqual status1 "none"}}
+              <tr>
+                <td class="text-center"><span>0</span> Hours</td>
+                <td class="text-center"><span>0</span> Min</td>
+                <td class="text-center"><span>0</span> Sec</td>
+              </tr>
+
+              {{else}}
+              <tr>
+                <td class="text-center" style="display: none;"><span id="days"></span> Days</td>
+                <td class="text-center"><span id="hours"></span> Hours</td>
+                <td class="text-center"><span id="minutes"></span> Min</td>
+                <td class="text-center"><span id="seconds"></span> Sec</td>
+                <td class="text-center" style="display: none;"><span id="gen">{{datee}}</span> </td>
+              </tr>
+              {{/ifEqual}}
+            </tbody>
+          </table>
+
+
+          <script>
+            const end = new Date(document.getElementById("gen").innerText);
+            console.log(".db " + end);
+
+            let pp = new Date();
+
+            console.log(".curr " + pp);
+
+
+
+
+            const int = setInterval(() => {
+              const current = new Date();
+              const remaining = current.getTime() - end.getTime();
+              const sec = 1000;
+              const min = sec * 60;
+              const hour = min * 60;
+              const day = hour * 24;
+              document.getElementById("days").innerText = Math.floor(remaining / day);
+              document.getElementById("hours").innerText = Math.floor((remaining % day) / hour);
+              document.getElementById("minutes").innerText = Math.floor((remaining % hour) / min);
+              document.getElementById("seconds").innerText = Math.floor((remaining % min) / sec);
+
+            
+            }, 1000);
+
+
+
+
+          </script>
+
+
+
+
+
+
+
+          {{!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's
+            content.</p> --}}
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

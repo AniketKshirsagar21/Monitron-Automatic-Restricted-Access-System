@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitron</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style_register.css">
+    <link rel="stylesheet" href="style_login.css">
+    {{!--
+    <link rel="stylesheet" href="styles.css"> --}}
+</head>
+
+<body style=" background: #eae6e6;">
+    {{!-- {{>header}} --}}
+
+    <div class="container">
+        {{#ifEqual invalid_msg "Invalid Username"}}
+        <div class="row  justify-content-center align-items-center h-100">
+            <div class="alert alert-danger" role="alert" style="width: 300px; text-align:center; margin-top:20px;">
+                {{invalid_msg}}
+            </div>
+        </div>
+        {{else}}
+
+        {{/ifEqual}}
+
+
+        {{#ifEqual invalid_msg "Invalid Password"}}
+        <div class="row  justify-content-center align-items-center h-100">
+            <div class="alert alert-danger" role="alert" style="width: 300px; text-align:center; margin-top:20px;">
+                {{invalid_msg}}
+            </div>
+        </div>
+        {{else}}
+
+        {{/ifEqual}}
+
+        <div class="container">
+
+            <div class="card" id="card1">
+
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+               
+                <div class="card-body" id="card-body1">
+                    <h1>Login
+                    </h1>
+                    {{!-- <h1>Login
+                    </h1> --}}
+                    <form class="row g-3" action="/myloginpage" autocomplete = "off" method="POST"  >
+                        <div class="col-md-12">
+                            <label for="inputPassword4" class="form-label">UserName</label>
+                            <input type="text" class="form-control" name="entered_username" id="inputPassword4"
+                                value={{entered_username}}>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputPassword4" class="form-label">Password</label>
+                            <input type="password" name="entered_password" class="form-control" id="myInput">
+                        </div>
+
+                        <div class="col-md-12">
+                            <input autocomplete="false" type="checkbox" onclick="myFunction()">
+                            <span>
+                                Show Password
+                            </span>
+                        </div>
+
+
+
+                        <div class="col-md-12" id="submit-cancel">
+                            <div class="form-check">
+                                <input checked class="form-check-input" type="radio" name="student_radio"
+                                    value="student" id="flexRadioDefault1">
+                                <label class="form-check-label" for="st1">
+                                    User
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="student_radio" id="flexRadioDefault2"
+                                    value="admin">
+                                <label class="form-check-label" for="st1">
+                                    Admin
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-12" id="submit-cancel">
+                            <button type="submit" class="btn btn-success"
+                                style="background-color: #271e4b;">Login</button>
+                            {{!-- <button type="button" class="btn btn-danger">Cancel</button> --}}
+                            {{!-- <a class="btn btn-danger btn-lg" href="/">X </a> --}}
+                        <button type="button" class="btn btn-info"><a style="color: white; list-style : none ; text-decoration : none;" href="/myregisterpage">New Registration </a></button>
+                        <button type="button" class="btn btn-danger"><a style="color: white; list-style : none ; text-decoration : none;" href="/">Cancel </a></button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
